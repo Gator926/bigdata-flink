@@ -38,6 +38,8 @@ object StreamingJob {
 
     val text: DataStream[String] = env.socketTextStream("localhost", 9000)
 
+    println(text.parallelism)
+
     text.flatMap(_.split(","))
       .map((_, 1))
       .keyBy(0)
