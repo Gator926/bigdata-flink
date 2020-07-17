@@ -34,30 +34,16 @@ import org.apache.flink.streaming.api.scala._
  */
 object StreamingJob {
   def main(args: Array[String]) {
-    // set up the streaming execution environment
     val env = StreamExecutionEnvironment.getExecutionEnvironment
 
-    /*
-     * Here, you can start creating your execution plan for Flink.
-     *
-     * Start with getting some data from the environment, like
-     *  env.readTextFile(textPath);
-     *
-     * then, transform the resulting DataStream[String] using operations
-     * like
-     *   .filter()
-     *   .flatMap()
-     *   .join()
-     *   .group()
-     *
-     * and many more.
-     * Have a look at the programming guide:
-     *
-     * https://flink.apache.org/docs/latest/apis/streaming/index.html
-     *
-     */
+    val text: DataStream[String] = env.socketTextStream("localhost", 9000)
 
-    // execute program
+    text.flatMap(_.split(","))
+      .map((_, 1))
+      .keyBy(0)
+      .sum(1)
+      .print()
+
     env.execute("Flink Streaming Scala API Skeleton")
   }
 }
