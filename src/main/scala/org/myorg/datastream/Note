@@ -1,1 +1,3 @@
+fromCollect / socketTextStream / fromElements 是单并行度
+fromParallelCollection / readTextFile 是多并行度
 自定义Source: SourceFunction / RichParallelSourceFunction /  ParallelSourceFunction
