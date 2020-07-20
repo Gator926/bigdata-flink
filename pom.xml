@@ -104,6 +104,21 @@ under the License.
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.28</version>
 		</dependency>
+		<dependency>
+			<groupId>org.scalikejdbc</groupId>
+			<artifactId>scalikejdbc-config_2.11</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.scalikejdbc</groupId>
+			<artifactId>scalikejdbc-core_2.11</artifactId>
+			<version>3.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.scalikejdbc</groupId>
+			<artifactId>scalikejdbc-interpolation_2.11</artifactId>
+			<version>3.4.2</version>
+		</dependency>
 	</dependencies>
 
 	<build>
